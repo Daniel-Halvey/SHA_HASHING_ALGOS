@@ -1,80 +1,22 @@
-import hashlib
-#input the strings you need encrypted where you see "str ="
-print("          Daniel Halvey is working with Hashing Algorithms on 6/12/2021 11:47 am")
+# Exploring Hashing Algorithms (Educational only, not secure)
 
+# Use placeholder names and generic statements
+str = "A fictional person created their first program in a programming language"
 
-str = "Let's_encrypt_Daniel"
+# SHA-256 (Secure for some non-critical uses)
+result = hashlib.sha256(str.encode()).hexdigest()
+print(f"SHA-256 hash: {result}")
 
-# using encode() and sha256
-result = hashlib.sha256(str.encode())
+# SHA-384 (More secure than SHA-256)
+result = hashlib.sha384(str.encode()).hexdigest()
+print(f"SHA-384 hash: {result}")
 
-# hexadecimal output
-print("The hexadecimal value of SHA256 is : ")
-print(result.hexdigest())
+# Briefly explain why SHA-1 is unsuitable for security
+print("\nSHA-1 is not recommended for security purposes due to known vulnerabilities.\n")
 
-print("\r")
+# Explain the meaning of the generated hashes and their limitations
+print("These hashes are unique fingerprints of the input string, but remember:")
+print("- They are not reversible, meaning you cannot get the original string from the hash.")
+print("- Changing even a single character in the string will result in a completely different hash.")
 
-
-str = "Daniel can code"
-
-# using encode() and sha384
-result = hashlib.sha384(str.encode())
-
-# hexadecimal output
-print("The hexadecimal value of SHA384 is : ")
-print(result.hexdigest())
-
-print("\r")
-
-
-str = "Learning to encrypt is easy"
-
-
-# using encode() and sha224
-result = hashlib.sha224(str.encode())
-
-# hexadecimal output
-print("The hexadecimal value of SHA224 is : ")
-print(result.hexdigest())
-
-print("\r")
-
-
-str = "Daniel created his first program in JavaScript at USFSP With his favorite computer scientist"
-# using encode() and sha512()
-result = hashlib.sha512(str.encode())
-
-# hexadecimal output
-print("The hexadecimal value of SHA512 is : ")
-print(result.hexdigest())
-
-print("\r")
-
-# Final Hash SHA1
-str = "Final Hash in this Program SHA1"
-
-# using encode() and sha1
-result = hashlib.sha1(str.encode())
-
-# hexadecimal output
-print("The hexadecimal value  of SHA1 is : ")
-print(result.hexdigest())
-print("\r")
-print("\r")
-print("******")
-print("*****")
-print("****")
-print("***")
-print("*")
-print("**")
-print("***")
-print("****")
-print("*****")
-#Daniel Halvey
-
-
-
-
-
-
-print("This is a wonderful program for understanding different was to hash strings")
+print("\nUse strong hashing algorithms like bcrypt or Argon2 for sensitive data!")
